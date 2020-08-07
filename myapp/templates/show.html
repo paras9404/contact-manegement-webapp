@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+{%block content%}
+<table class="table table-striped mt-5">
+   
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for e in employee  %}
+    <tr>
+        <td>{{e.eid}}</td>
+        <td>{{e.ename}}</td>
+        <td>{{e.eemail}}</td>
+        <td>{{e.econtact}}</td>
+        <td><a href="edit/{{e.id}}">Edit</a></td>
+        <td ><a href="delete/{{e.id}}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

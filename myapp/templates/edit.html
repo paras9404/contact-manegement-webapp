@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{%block content%}
+<form action="/update/{{employee.id}}" method="POST">
+    {% csrf_token %}
+    <table class="table">
+        <tr><td>Eid</td>
+            <td>
+                <input name="eid" value="{{employee.eid}}">
+            </td>
+        </tr>
+        <tr><td>Name</td>
+            <td>
+                <input name="ename"value="{{employee.ename}}">
+            </td>
+        </tr>
+        <tr><td>Email</td>
+            <td>
+                <input name="eemail"value="{{employee.eemail}}">
+            </td>
+        </tr>
+        <tr><td>Contect</td>
+            <td>
+                <input name="econtact"value="{{employee.econtact}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">update</button>
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock %}
